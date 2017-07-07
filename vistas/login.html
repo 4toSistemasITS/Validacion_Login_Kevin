@@ -1,0 +1,26 @@
+<body>
+	
+
+	<center><h1>Iniciar sesion</h1></center><br><br>
+		<form name="FormLogin" novalidate>
+			<p>Nombre de Usuario:<br>
+				<input type="text" name="user" placeholder="Escriba su nombre de Usuario" ng-model="user" required>
+				<span style="color:red" ng-show="FormLogin.user.$dirty && FormLogin.user.$invalid">
+				<span ng-show="FormLogin.user.$error.required">No ha ingresado un nombre de usuario</span>
+				</span>
+			</p>
+
+			<p>Contraseña:<br>
+				<input type="password" name="password" placeholder="Contraseña" ng-model="password" required>
+				<span style="color:red" ng-show="FormLogin.password.$dirty && FormLogin.password.$invalid">
+				<span ng-show="FormLogin.password.$error.required">No ha ingresado una contraseña</span>
+				</span>
+			</p>
+
+			<p>
+				<input type="submit" ng-disabled="FormLogin.user.$dirty && FormLogin.user.$invalid || FormLogin.password.$dirty && FormLogin.password.$invalid">
+			</p>
+		</form>
+	
+		
+</body>
